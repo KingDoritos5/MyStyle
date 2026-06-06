@@ -736,7 +736,13 @@ AUDIO_FEATURES = [
 @st.cache_data(show_spinner=False)
 def load_main_tracks(max_rows=15000):
     # main song database - 170k tracks but we sample it down for speed
-    df = pd.read_csv("data.csv")
+    if os.path.exists("data.csv.gz"):
+        df = pd.read_csv("data.csv.gz")
+    elif os.path.exists("data.csv"):
+        df = pd.read_csv("data.csv")
+    else:
+        st.error("⚠️ **Dataset file not found!** Please make sure `data.csv.gz` (or `data.csv`) is uploaded to the root of your repository on GitHub.")
+        st.stop()
 
     # rename to match our internal column names
     df.rename(columns={"name": "title", "id": "track_id", "artists": "artist"}, inplace=True)
