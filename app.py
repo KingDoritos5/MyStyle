@@ -454,6 +454,60 @@ html, body, [class*="css"] {
 
 .song-card:hover::before { opacity: 1; }
 
+/* ── Source-specific card styles ── */
+.song-card.card-similar-sound {
+    border-left: 3px solid #1db954;
+    background: linear-gradient(90deg, rgba(29,185,84,0.06) 0%, var(--card) 40%);
+}
+.song-card.card-similar-sound:hover {
+    background: linear-gradient(90deg, rgba(29,185,84,0.10) 0%, var(--card-hover) 40%);
+}
+.song-card.card-similar-sound::before { display: none; }
+
+.song-card.card-fans-also-like {
+    border-left: 3px solid #a78bfa;
+    background: linear-gradient(90deg, rgba(167,139,250,0.06) 0%, var(--card) 40%);
+}
+.song-card.card-fans-also-like:hover {
+    background: linear-gradient(90deg, rgba(167,139,250,0.10) 0%, var(--card-hover) 40%);
+}
+.song-card.card-fans-also-like::before { display: none; }
+
+.song-card.card-discovery {
+    border-left: 3px solid #5eead4;
+    background: linear-gradient(90deg, rgba(94,234,212,0.06) 0%, var(--card) 40%);
+}
+.song-card.card-discovery:hover {
+    background: linear-gradient(90deg, rgba(94,234,212,0.10) 0%, var(--card-hover) 40%);
+}
+.song-card.card-discovery::before { display: none; }
+
+/* Legend for recommendation sources */
+.rec-legend {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin: 0.6rem 0 0.8rem;
+    padding: 0.5rem 0.8rem;
+    background: rgba(255,255,255,0.03);
+    border-radius: var(--radius-md);
+}
+
+.rec-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+
+.rec-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
 .rank-num {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2rem;
@@ -1350,14 +1404,18 @@ def song_card(track, key_prefix, downvotes, upvotes, source="", seed=None):
         parts.append(genre)
     subtitle = " · ".join(parts)
 
-    # Source badge CSS class
+    # Source badge CSS class + card-level class for visual distinction
     source_class = ""
+    card_class = "song-card"
     if source == "Similar Sound":
         source_class = "tag-source-similar"
+        card_class = "song-card card-similar-sound"
     elif source == "Fans Also Like":
         source_class = "tag-source-fans"
+        card_class = "song-card card-fans-also-like"
     elif source == "Discovery":
         source_class = "tag-source-discovery"
+        card_class = "song-card card-discovery"
 
     # Build tags
     tags_html = ""
@@ -1369,7 +1427,7 @@ def song_card(track, key_prefix, downvotes, upvotes, source="", seed=None):
         tags_html += f'<span class="tag">💛 {mood_lbl}</span>'
 
     card_html = (
-        f'<div class="song-card">'
+        f'<div class="{card_class}">'
         f'<div style="display:flex;justify-content:space-between;align-items:flex-start;">'
         f'<div style="min-width:0;">'
         f'<div class="song-title">{track["title"]}</div>'
@@ -1414,12 +1472,12 @@ def song_card(track, key_prefix, downvotes, upvotes, source="", seed=None):
             st.markdown(f"**🎹 Instrumentalness:** {track.get('instrumentalness', 0):.2f}")
             st.markdown(f"**🎤 Liveness:** {track.get('liveness', 0):.2f}")
             
-        radar_chart(track, title="")
+        radar_chart(track, title="", key=f"radar_{key_prefix}_{tid}")
 
 
 
 
-def radar_chart(track, title="Audio Features"):
+def radar_chart(track, title="Audio Features", key=None):
     feats = ["valence", "energy", "acousticness", "danceability", "instrumentalness", "liveness"]
     vals = [float(track.get(f, 0)) for f in feats]
     # close the polygon
@@ -1446,7 +1504,7 @@ def radar_chart(track, title="Audio Features"):
         height=260,
         title=dict(text=title, font=dict(size=11, color="#b3b3b3")),
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, key=key)
 
 
 def comparison_heatmap(seed, recs):
@@ -1929,14 +1987,7 @@ def main():
                     st.session_state["playlist"] = pl
                     st.success(f'Added "{seed["title"]}"!')
 
-        # ── Unified recommendation feed ──
-        st.markdown(f"""
-<div class="feed-header">
-    <div class="feed-title">Recommended For You</div>
-    <div class="feed-subtitle">Based on "{seed['title']}" by {seed['artist']}</div>
-</div>
-        """, unsafe_allow_html=True)
-
+        # ── Recommendation feed — split by source ──
         all_recs = merge_recommendations(
             seed_idx, X, df, knn_model, user_history,
             n=8, mask=active_mask, skip=dv
@@ -1945,11 +1996,35 @@ def main():
         if all_recs.empty:
             st.warning(f"No recommendations with current filters ({n_match:,} songs match). Try widening your filters.")
         else:
-            cols = st.columns(2)
-            for i, (_, rec) in enumerate(all_recs.iterrows()):
-                with cols[i % 2]:
-                    source = rec.get("source", "")
-                    song_card(rec, f"rec_{i}", dv, uv, source=source, seed=seed)
+            # Split into Similar Sound and Fans Also Like
+            similar_recs = all_recs[all_recs["source"] == "Similar Sound"]
+            fans_recs = all_recs[all_recs["source"] == "Fans Also Like"]
+
+            # ── Similar Sound section ──
+            if not similar_recs.empty:
+                st.markdown(f"""
+<div class="feed-header">
+    <div class="feed-title"><span class="rec-legend-dot" style="background:#1db954;display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:0.5rem;vertical-align:middle;"></span>Similar Sound</div>
+    <div class="feed-subtitle">Songs that match "{seed['title']}" based on audio features</div>
+</div>
+                """, unsafe_allow_html=True)
+                cols_ss = st.columns(2)
+                for i, (_, rec) in enumerate(similar_recs.iterrows()):
+                    with cols_ss[i % 2]:
+                        song_card(rec, f"sim_{i}", dv, uv, source="Similar Sound", seed=seed)
+
+            # ── Fans Also Like section ──
+            if not fans_recs.empty:
+                st.markdown(f"""
+<div class="feed-header" style="margin-top:1.5rem;">
+    <div class="feed-title"><span class="rec-legend-dot" style="background:#a78bfa;display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:0.5rem;vertical-align:middle;"></span>Fans Also Like</div>
+    <div class="feed-subtitle">Listeners with similar taste also enjoyed these</div>
+</div>
+                """, unsafe_allow_html=True)
+                cols_fl = st.columns(2)
+                for i, (_, rec) in enumerate(fans_recs.iterrows()):
+                    with cols_fl[i % 2]:
+                        song_card(rec, f"fans_{i}", dv, uv, source="Fans Also Like", seed=seed)
 
         st.divider()
 
@@ -2050,7 +2125,7 @@ def main():
                     avg_feats = df.iloc[pl_indices][
                         ["valence","energy","acousticness","danceability","instrumentalness","liveness"]
                     ].mean()
-                    radar_chart(avg_feats, "Averaged profile of your playlist")
+                    radar_chart(avg_feats, "Averaged profile of your playlist", key="radar_playlist_avg")
 
                     st.markdown("#### ✨ Songs That Match Your Playlist Vibe")
                     n_pl = st.slider("How many results?", 4, 16, 8, 2, key="pl_n")
