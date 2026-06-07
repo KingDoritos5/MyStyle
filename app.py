@@ -2204,10 +2204,51 @@ def main():
 
             st.divider()
 
+            # ── Liked Songs ──
+            liked_ids = st.session_state["upvotes"]
+            hidden_ids = st.session_state["downvotes"]
+
+            st.markdown(f"#### ❤️ Liked Songs ({len(liked_ids)})")
+            if liked_ids:
+                liked_tracks = df[df["track_id"].isin(liked_ids)]
+                if not liked_tracks.empty:
+                    for i, (_, t) in enumerate(liked_tracks.iterrows()):
+                        lk_col1, lk_col2 = st.columns([8, 1])
+                        with lk_col1:
+                            year = int(t.get("year", 0))
+                            year_str = f" · {year}" if year > 0 else ""
+                            genre = t.get("genre", "")
+                            genre_str = f" · {genre}" if genre and genre not in ["Unknown", "[]", ""] else ""
+                            st.markdown(
+                                f'<div class="song-card" style="padding: .7rem 1.1rem;">'
+                                f'<div style="display: flex; align-items: center; gap: 1rem;">'
+                                f'<span style="font-size: 1.2rem;">❤️</span>'
+                                f'<div><div class="song-title" style="font-size: .88rem;">{t["title"]}</div>'
+                                f'<div class="song-artist">{t["artist"]}{year_str}{genre_str}</div>'
+                                f'</div></div></div>',
+                                unsafe_allow_html=True,
+                            )
+                        with lk_col2:
+                            if st.button("✕", key=f"unlike_{t['track_id']}"):
+                                st.session_state["upvotes"].discard(t["track_id"])
+                                st.rerun()
+                else:
+                    st.caption("Liked songs not found in the current dataset.")
+            else:
+                st.markdown("""
+<div style="text-align:center; padding: 1.5rem; color: #727272;">
+    <div style="font-size: 2rem; margin-bottom: 0.5rem;">♡</div>
+    <div style="font-size: 0.85rem;">No liked songs yet</div>
+    <div style="font-size: 0.75rem; margin-top: 0.3rem;">Tap ♡ on any recommendation to save it here</div>
+</div>
+                """, unsafe_allow_html=True)
+
+            st.divider()
+
             # Session stats + Reset
             fc1, fc2 = st.columns(2)
-            fc1.metric("♡ Liked this session", len(st.session_state["upvotes"]))
-            fc2.metric("✕ Hidden this session", len(st.session_state["downvotes"]))
+            fc1.metric("♡ Liked this session", len(liked_ids))
+            fc2.metric("✕ Hidden this session", len(hidden_ids))
 
             if st.button("🔄 Reset All Feedback"):
                 st.session_state["downvotes"] = set()
