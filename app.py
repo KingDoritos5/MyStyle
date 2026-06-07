@@ -40,7 +40,7 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap');
 
 :root {
-    /* ── Spotify Dark Palette ── */
+    /* ââ€€ââ€€ Spotify Dark Palette ââ€€ââ€€ */
     --bg: #121212;
     --bg-elevated: #1a1a1a;
     --surface: #181818;
@@ -48,7 +48,7 @@ st.markdown("""
     --card-hover: #282828;
     --highlight: #333333;
 
-    /* ── Accent Colors ── */
+    /* ââ€€ââ€€ Accent Colors ââ€€ââ€€ */
     --accent: #1db954;
     --accent-dim: rgba(29, 185, 84, 0.15);
     --accent-glow: rgba(29, 185, 84, 0.25);
@@ -57,19 +57,19 @@ st.markdown("""
     --pink: #f472b6;
     --teal: #5eead4;
 
-    /* ── Typography ── */
+    /* ââ€€ââ€€ Typography ââ€€ââ€€ */
     --text: #ffffff;
     --text-secondary: #b3b3b3;
     --sub: #727272;
 
-    /* ── Borders & Shadows ── */
+    /* ââ€€ââ€€ Borders & Shadows ââ€€ââ€€ */
     --border: rgba(255, 255, 255, 0.07);
     --border-hover: rgba(255, 255, 255, 0.15);
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
     --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.6);
 
-    /* ── Layout ── */
+    /* ââ€€ââ€€ Layout ââ€€ââ€€ */
     --radius-sm: 6px;
     --radius-md: 8px;
     --radius-lg: 12px;
@@ -77,9 +77,9 @@ st.markdown("""
     --transition: 0.2s ease;
 }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    GLOBAL RESET
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 html, body, [class*="css"] {
     background: var(--bg) !important;
     color: var(--text) !important;
@@ -93,17 +93,17 @@ html, body, [class*="css"] {
     padding-bottom: calc(var(--bottom-bar-h) + 20px) !important;
 }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SCROLLBAR
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
 
-/* ════════════════════════════════════════════
-   SIDEBAR — Spotify-style persistent nav
-   ════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SIDEBAR â€â€ Spotify-style persistent nav
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 [data-testid="stSidebar"] {
     background: var(--surface) !important;
     border-right: none !important;
@@ -231,9 +231,9 @@ html, body, [class*="css"] {
     font-weight: 700 !important;
 }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    GRADIENT SECTION HEADERS
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .gradient-header {
     position: relative;
     padding: 2rem 0 1.5rem;
@@ -277,9 +277,9 @@ html, body, [class*="css"] {
     font-weight: 400;
 }
 
-/* ════════════════════════════════════════════
-   FIXED BOTTOM BAR — "Now Playing"
-   ════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FIXED BOTTOM BAR â€â€ "Now Playing"
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .bottom-bar {
     position: fixed;
     bottom: 0;
@@ -411,9 +411,9 @@ html, body, [class*="css"] {
     font-weight: 700;
 }
 
-/* ════════════════════════════════════════════
-   CARD GRID — responsive auto-fill layout
-   ════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   CARD GRID â€â€ responsive auto-fill layout
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -421,14 +421,14 @@ html, body, [class*="css"] {
     margin: 0.5rem 0 1rem;
 }
 
-/* ════════════════════════════════════════════
-   SONG CARD — Spotify-inspired
-   ════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SONG CARD â€â€ Spotify-inspired
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .song-card {
     background: var(--card);
     border: none;
     border-radius: var(--radius-md);
-    padding: 1rem 1.2rem;
+    padding: 1.2rem 1.4rem;
     margin-bottom: 0;
     position: relative;
     overflow: hidden;
@@ -484,16 +484,16 @@ html, body, [class*="css"] {
     font-weight: 400;
 }
 
-/* ── Tags ── */
-.tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.6rem; }
+/* ââ€€ââ€€ Tags ââ€€ââ€€ */
+.tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.8rem; }
 
 .tag {
     background: rgba(255, 255, 255, 0.06);
     border: none;
     color: var(--text-secondary);
     border-radius: 20px;
-    padding: 2px 10px;
-    font-size: 0.65rem;
+    padding: 4px 12px;
+    font-size: 0.7rem;
     font-weight: 500;
     transition: all var(--transition);
 }
@@ -512,7 +512,7 @@ html, body, [class*="css"] {
 .tag-g { background: var(--accent-dim); color: var(--accent); }
 .tag-g:hover { background: var(--accent-glow); }
 
-/* ── Why Box ── */
+/* ââ€€ââ€€ Why Box ââ€€ââ€€ */
 .why-box {
     background: rgba(255,255,255,.03);
     border-left: 2px solid var(--accent);
@@ -528,9 +528,9 @@ html, body, [class*="css"] {
 
 .song-card:hover .why-box { background: rgba(255,255,255,.06); }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SECTION TITLE
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .sec-title {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.2rem;
@@ -544,9 +544,9 @@ html, body, [class*="css"] {
 
 .sec-title span { color: var(--text-secondary); font-weight: 400; font-size: 0.85rem; }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SEED TAG
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .seed-tag {
     display: inline-block;
     background: rgba(255,255,255,.06);
@@ -565,9 +565,9 @@ html, body, [class*="css"] {
     border-color: rgba(255,255,255,.2);
 }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    METRIC CARDS
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 [data-testid="metric-container"] {
     background: var(--card) !important;
     border: none !important;
@@ -581,9 +581,9 @@ html, body, [class*="css"] {
     transform: translateY(-1px);
 }
 
-/* ════════════════════════════════════════════
-   BUTTONS — Spotify-style
-   ════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   BUTTONS â€â€ Spotify-style
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .stButton button {
     background: rgba(255,255,255,.07) !important;
     border: none !important;
@@ -617,9 +617,9 @@ html, body, [class*="css"] {
     outline: none !important;
 }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    TABS (for sub-tabs within pages)
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 [data-testid="stTabs"] button {
     font-family: 'Inter', sans-serif !important;
     font-weight: 600 !important;
@@ -639,9 +639,9 @@ html, body, [class*="css"] {
     border-bottom-color: var(--accent) !important;
 }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    INPUTS & SELECTORS
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 [data-testid="stSelectbox"] > div,
 [data-testid="stMultiSelect"] > div {
     border-radius: var(--radius-sm) !important;
@@ -663,9 +663,9 @@ div[data-baseweb="select"] > div:focus-within {
     box-shadow: 0 0 0 1px var(--accent) !important;
 }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SLIDERS
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 [data-testid="stSlider"] [role="slider"] {
     background-color: var(--accent) !important;
     box-shadow: 0 0 6px rgba(29, 185, 84, 0.3) !important;
@@ -676,9 +676,9 @@ div[data-baseweb="select"] > div:focus-within {
     font-weight: 600 !important;
 }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    EXPANDER
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 [data-testid="stExpander"] {
     border: 1px solid var(--border) !important;
     border-radius: var(--radius-md) !important;
@@ -694,9 +694,9 @@ div[data-baseweb="select"] > div:focus-within {
     color: var(--accent) !important;
 }
 
-/* ════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    MISC
-   ════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 hr { border-color: var(--border) !important; }
 
 a {
@@ -710,6 +710,150 @@ a:focus { outline: 2px solid var(--accent) !important; outline-offset: 2px !impo
 a:active { opacity: 0.6 !important; }
 
 #MainMenu, footer { visibility: hidden !important; }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   WELCOME SCREEN â€â€ First-time user experience
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.welcome-screen {
+    text-align: center;
+    padding: 3rem 2rem 4rem;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.welcome-icon {
+    font-size: 3.5rem;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.welcome-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+}
+
+.welcome-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 2.2rem;
+    line-height: 1.5;
+}
+
+.welcome-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--sub);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SEED BAR â€â€ Compact now-playing strip
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.seed-bar {
+    background: var(--card);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    transition: background var(--transition);
+    border: 1px solid var(--border);
+}
+
+.seed-bar:hover {
+    background: var(--card-hover);
+}
+
+.seed-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-width: 0;
+}
+
+.seed-bar-art {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.seed-bar-info { min-width: 0; }
+
+.seed-bar-title {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.seed-bar-artist {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.seed-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+}
+
+.seed-bar-match {
+    font-size: 0.7rem;
+    color: var(--accent);
+    font-weight: 600;
+    background: var(--accent-dim);
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SOURCE BADGE â€â€ recommendation method label
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.tag-source-similar { background: rgba(29,185,84,.12); color: #1db954; }
+.tag-source-similar:hover { background: rgba(29,185,84,.22); }
+.tag-source-fans { background: rgba(167,139,250,.12); color: #b49dfa; }
+.tag-source-fans:hover { background: rgba(167,139,250,.22); }
+.tag-source-discovery { background: rgba(94,234,212,.12); color: #6ee7c7; }
+.tag-source-discovery:hover { background: rgba(94,234,212,.22); }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FEED HEADER
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.feed-header {
+    margin-bottom: 0.3rem;
+}
+
+.feed-header .feed-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.feed-header .feed-subtitle {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 0.15rem;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -727,6 +871,19 @@ AUDIO_FEATURES = [
     "tempo_norm",      # normalized version of tempo
     "popularity_norm", # normalized version of popularity
 ]
+
+
+def human_label(feature, value):
+    """Convert raw audio feature values to human-readable labels."""
+    labels = {
+        "energy": [(0.0, 0.33, "Chill"), (0.33, 0.66, "Moderate"), (0.66, 1.01, "High Energy")],
+        "valence": [(0.0, 0.33, "Melancholy"), (0.33, 0.66, "Neutral"), (0.66, 1.01, "Happy")],
+        "danceability": [(0.0, 0.33, "Slow"), (0.33, 0.66, "Groovy"), (0.66, 1.01, "Dance Floor")],
+    }
+    for low, high, label in labels.get(feature, []):
+        if low <= value < high:
+            return label
+    return ""
 
 
 # ==============================================================
@@ -1002,6 +1159,12 @@ def rec_collaborative(user_vec, history_df, df, n=6, skip=None):
             if sid in history_df.columns:
                 weighted[list(history_df.columns).index(sid)] = -1
 
+    # Normalize scores to 0-1 range based on the positive weights
+    max_w = weighted.max()
+    if max_w > 0:
+        mask_pos = weighted > 0
+        weighted[mask_pos] = weighted[mask_pos] / max_w
+
     top = np.argsort(weighted)[::-1][:n]
     rec_ids = [history_df.columns[i] for i in top]
     result = df[df["track_id"].isin(rec_ids)].copy()
@@ -1048,49 +1211,56 @@ def rec_surprise(df, X, mask, n=6, skip=None):
 # EXPLANATION - why did we recommend this?
 # ==============================================================
 
-def why_this_song(seed, rec, method="content"):
+def why_this_song(seed, rec):
+    """Generate a short, human-readable explanation."""
     checks = {
-        "valence": ("mood/positivity", 0.13),
-        "energy": ("energy level", 0.13),
-        "acousticness": ("acoustic feel", 0.13),
+        "valence": ("mood", 0.13),
+        "energy": ("energy", 0.13),
         "danceability": ("danceability", 0.13),
-        "tempo": ("tempo", 15),
     }
-
     similar = []
     for feat, (label, threshold) in checks.items():
         if abs(seed.get(feat, 0) - rec.get(feat, 0)) < threshold:
             similar.append(label)
 
-    method_labels = {
-        "content": "Content-Based",
-        "knn": "K-Nearest Neighbors",
-        "collab": "Collaborative Filtering",
-        "surprise": "Surprise Discovery",
-    }
-    m = method_labels.get(method, method)
-    score = rec.get("score", None)
-    score_str = f" — {score:.0%} match" if score is not None else ""
-
     if similar:
-        reason = f"similar {', '.join(similar[:3])} to your seed track"
-    else:
-        reason = "similar overall audio fingerprint"
+        return f"Similar {', '.join(similar[:2])}"
+    return "Similar overall vibe"
 
-    sg = seed.get("genre", "")
-    rg = rec.get("genre", "")
-    genre_note = f"Same genre: <b>{rg}</b>." if sg == rg else f"Bridges <b>{sg}</b> → <b>{rg}</b>."
 
-    # special note for pop songs, referencing clark 2021 paper
-    pop_note = ""
-    if "Pop" in rg or "Pop" in sg:
-        pop_note = (
-            "<br><br>🎵 <i>Clark (2021):</i> This track likely features a recurring "
-            "<b>4-note, 2-phrase melody</b> — a structural pattern that's become "
-            "increasingly common in modern pop since 2010."
-        )
+def merge_recommendations(seed_idx, X, df, knn_model, user_history, n=8, mask=None, skip=None):
+    """Run all recommendation engines and merge into a single ranked list."""
+    seed = df.iloc[seed_idx]
 
-    return f"<i>{m}</i>{score_str} · {reason}. {genre_note}{pop_note}"
+    # Content-based
+    mv = mean_vector([seed_idx], X)
+    recs_cb = rec_content_based(mv, X, df, [seed_idx], n, mask, skip)
+    if not recs_cb.empty:
+        recs_cb["source"] = "Similar Sound"
+
+    # KNN
+    recs_knn = rec_knn(seed_idx, knn_model, X, df, n, mask, skip)
+    if not recs_knn.empty:
+        recs_knn["source"] = "Similar Sound"
+
+    # Collaborative
+    rng = np.random.default_rng(int(hashlib.md5(seed["track_id"].encode()).hexdigest(), 16) % 2**32)
+    sample_user = rng.choice(user_history.index.tolist())
+    u_vec = user_history.loc[sample_user].values.astype(float)
+    recs_cf = rec_collaborative(u_vec, user_history, df, n, skip)
+    if not recs_cf.empty:
+        recs_cf["source"] = "Fans Also Like"
+
+    # Merge and deduplicate
+    all_recs = pd.concat([recs_cb, recs_knn, recs_cf], ignore_index=True)
+    if all_recs.empty:
+        return all_recs
+
+    # Keep best score per track, preserve first source label
+    all_recs = all_recs.sort_values("score", ascending=False)
+    all_recs = all_recs.drop_duplicates(subset="track_id", keep="first")
+
+    return all_recs.head(n).reset_index(drop=True)
 
 
 
@@ -1115,24 +1285,20 @@ def gradient_section_header(title, subtitle, variant="discover"):
 """, unsafe_allow_html=True)
 
 
-def show_bottom_bar(seed, n_match=0, n_hidden=0):
-    """Fixed bottom bar showing the current seed track + stats."""
-    title = seed.get("title", "No track selected")[:35]
-    artist = seed.get("artist", "—")[:25]
-    energy = float(seed.get("energy", 0))
-    valence = float(seed.get("valence", 0))
+def show_bottom_bar(seed, n_match=0):
+    """Simplified fixed bottom bar — seed track + match count only."""
+    title = seed.get("title", "No track selected")[:40]
+    artist = seed.get("artist", "—")[:30]
     genre = seed.get("genre", "Unknown")
     if genre in ["Unknown", "[]", ""]:
         genre = "—"
 
-    # pick album art color based on genre hash
     genre_colors = {
         "Pop": "#1db954", "Rock": "#e8c547", "Hip-Hop": "#f472b6",
         "Jazz": "#a78bfa", "Classical": "#5eead4", "Electronic": "#22d3ee",
         "R&B": "#fb923c", "Country": "#34d399", "Metal": "#ef4444",
     }
     art_bg = genre_colors.get(genre, "#333333")
-    score_pct = int(energy * 100)
 
     st.markdown(f"""
 <div class="bottom-bar">
@@ -1143,33 +1309,16 @@ def show_bottom_bar(seed, n_match=0, n_hidden=0):
             <div class="bb-track-artist">{artist}</div>
         </div>
     </div>
-    <div class="bb-controls">
-        <div style="text-align: center;">
-            <div style="display: flex; align-items: center; gap: 1.2rem;">
-                <span class="bb-btn">⏮</span>
-                <span class="bb-btn bb-btn-play">▶</span>
-                <span class="bb-btn">⏭</span>
-            </div>
-            <div class="bb-progress">
-                <div class="bb-progress-bar">
-                    <div class="bb-progress-fill" style="width: {score_pct}%; background: var(--accent);"></div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="bb-stats">
         <span class="bb-stat-badge">🎯 <span class="bb-val">{n_match:,}</span> matches</span>
-        <span class="bb-stat-badge">⚡ {energy:.2f}</span>
-        <span class="bb-stat-badge">💛 {valence:.2f}</span>
-        <span class="bb-stat-badge">🚫 {n_hidden}</span>
     </div>
 </div>
 """, unsafe_allow_html=True)
 
 
-def show_sidebar_nav(playlist_count, liked_count, hidden_count):
-    """Sidebar logo and library summary — called before radio nav."""
-    st.markdown(f"""
+def show_sidebar_nav():
+    """Sidebar logo only — library stats moved to My Library page."""
+    st.markdown("""
 <div class="sidebar-logo">
     <span class="sidebar-logo-icon">🎵</span>
     <span class="sidebar-logo-text">MY STYLE</span>
@@ -1177,66 +1326,97 @@ def show_sidebar_nav(playlist_count, liked_count, hidden_count):
 <div class="sidebar-divider"></div>
 """, unsafe_allow_html=True)
 
-    # library summary shows after nav
-    st.markdown(f"""
-<div class="sidebar-section-label">Your Library</div>
-<div class="sidebar-playlist-summary">
-    🎼 Playlist: <span class="pl-count">{playlist_count}</span> songs<br>
-    👍 Liked: <span class="pl-count">{liked_count}</span><br>
-    👎 Hidden: <span class="pl-count">{hidden_count}</span>
-</div>
-""", unsafe_allow_html=True)
 
-
-def song_card(track, explanation, key_prefix, downvotes, upvotes, rank=0):
+def song_card(track, key_prefix, downvotes, upvotes, source="", seed=None):
+    """Simplified song card — 3 tags max, human-readable labels, ♡/✕ actions."""
     tid = track["track_id"]
-    pop = int(track.get("popularity", 50))
     score = track.get("score", None)
-    score_label = f"{score:.0%}" if score is not None else "—"
+    score_label = f"{score:.0%}" if score is not None else ""
     year = int(track.get("year", 0))
-    year_str = str(year) if year > 0 else "—"
+    year_str = str(year) if year > 0 else ""
     genre = track.get("genre", "Unknown")
     if genre in ["Unknown", "[]", ""]:
-        genre = "—"
+        genre = ""
 
-    anchor_html = ""
-    if "anchor" in track.index and pd.notna(track.get("anchor")):
-        anchor_html = f'<div style="font-size:.7rem;color:#5eead4;margin-top:.4rem">🎲 found via "{track["anchor"]}"</div>'
+    # Human-readable labels instead of raw numbers
+    energy_lbl = human_label("energy", float(track.get("energy", 0)))
+    mood_lbl = human_label("valence", float(track.get("valence", 0)))
+
+    # Build subtitle
+    parts = [track["artist"]]
+    if year_str:
+        parts.append(year_str)
+    if genre:
+        parts.append(genre)
+    subtitle = " · ".join(parts)
+
+    # Source badge CSS class
+    source_class = ""
+    if source == "Similar Sound":
+        source_class = "tag-source-similar"
+    elif source == "Fans Also Like":
+        source_class = "tag-source-fans"
+    elif source == "Discovery":
+        source_class = "tag-source-discovery"
+
+    # Build tags
+    tags_html = ""
+    if source:
+        tags_html += f'<span class="tag {source_class}">{source}</span>'
+    if energy_lbl:
+        tags_html += f'<span class="tag tag-c">⚡ {energy_lbl}</span>'
+    if mood_lbl:
+        tags_html += f'<span class="tag">💛 {mood_lbl}</span>'
 
     card_html = (
         f'<div class="song-card">'
-        f'<div class="rank-num">#{rank+1:02d}</div>'
-        f'<div class="song-title">🎵 {track["title"]}</div>'
-        f'<div class="song-artist">{track["artist"]} · {year_str}</div>'
-        f'<div class="tags">'
-        f'<span class="tag">{genre}</span>'
-        f'<span class="tag tag-v">match {score_label}</span>'
-        f'<span class="tag tag-p">♩ {track["tempo"]:.0f} bpm</span>'
-        f'<span class="tag tag-c">⚡ {track["energy"]:.2f}</span>'
-        f'<span class="tag">💛 {track["valence"]:.2f}</span>'
-        f'<span class="tag">⭐ {pop}/100</span>'
+        f'<div style="display:flex;justify-content:space-between;align-items:flex-start;">'
+        f'<div style="min-width:0;">'
+        f'<div class="song-title">{track["title"]}</div>'
+        f'<div class="song-artist">{subtitle}</div>'
         f'</div>'
-        f'{anchor_html}'
-        f'<div class="why-box">💡 {explanation}</div>'
+        + (f'<span style="font-size:.78rem;font-weight:600;color:#1db954;flex-shrink:0;margin-left:.5rem;">{score_label}</span>' if score_label else '')
+        + f'</div>'
+        f'<div class="tags">{tags_html}</div>'
         f'</div>'
     )
     st.markdown(card_html, unsafe_allow_html=True)
 
-    c1, c2, _ = st.columns([1, 1, 6])
+    c1, c2, _ = st.columns([1, 1, 8])
     with c1:
-        label = "✅" if tid in upvotes else "👍"
+        label = "❤️" if tid in upvotes else "♡"
         if st.button(label, key=f"like_{key_prefix}_{tid}"):
             upvotes.add(tid)
             downvotes.discard(tid)
             st.session_state["upvotes"] = upvotes
             st.rerun()
     with c2:
-        label = "🚫" if tid in downvotes else "👎"
-        if st.button(label, key=f"dislike_{key_prefix}_{tid}"):
-            downvotes.add(tid)
-            upvotes.discard(tid)
-            st.session_state["downvotes"] = downvotes
-            st.rerun()
+        if tid not in downvotes:
+            if st.button("✕", key=f"hide_{key_prefix}_{tid}"):
+                downvotes.add(tid)
+                upvotes.discard(tid)
+                st.session_state["downvotes"] = downvotes
+                st.rerun()
+
+    with st.expander("ℹ️ Details", expanded=False):
+        if seed is not None:
+            explanation = why_this_song(seed, track)
+            st.markdown(f"**Vibe:** *{explanation}*")
+        
+        # Display audio features in columns
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown(f"**⚡ Energy:** {track.get('energy', 0):.2f}")
+            st.markdown(f"**😊 Mood:** {track.get('valence', 0):.2f}")
+            st.markdown(f"**💃 Danceability:** {track.get('danceability', 0):.2f}")
+        with col2:
+            st.markdown(f"**🎸 Acousticness:** {track.get('acousticness', 0):.2f}")
+            st.markdown(f"**🎹 Instrumentalness:** {track.get('instrumentalness', 0):.2f}")
+            st.markdown(f"**🎤 Liveness:** {track.get('liveness', 0):.2f}")
+            
+        radar_chart(track, title="")
+
+
 
 
 def radar_chart(track, title="Audio Features"):
@@ -1272,7 +1452,7 @@ def radar_chart(track, title="Audio Features"):
 def comparison_heatmap(seed, recs):
     feats = ["valence", "energy", "acousticness", "danceability",
              "instrumentalness", "liveness", "speechiness"]
-    names = [seed["title"][:18] + " ★"] + [r["title"][:18] for _, r in recs.head(8).iterrows()]
+    names = [seed["title"][:18] + " â˜…"] + [r["title"][:18] for _, r in recs.head(8).iterrows()]
     z = np.array([[seed.get(f, 0)] + [row.get(f, 0) for _, row in recs.head(8).iterrows()] for f in feats])
 
     fig = px.imshow(
@@ -1345,7 +1525,7 @@ def taste_map(df, pca_coords, seed_indices):
             text=seeds["title"].str[:15],
             textposition="top center",
             textfont=dict(color="#1db954", size=9),
-            name="Your seed ★", showlegend=True,
+            name="Your seed â˜…", showlegend=True,
         ))
 
     fig.update_layout(
@@ -1428,6 +1608,7 @@ def genre_comparison_chart():
         margin=dict(t=10, b=10),
     )
     st.plotly_chart(fig, use_container_width=True)
+
 
 
 def artist_stats_chart():
@@ -1564,7 +1745,6 @@ def eval_dashboard(df):
     st.plotly_chart(fig_hist, use_container_width=True)
 
 
-
 # ==============================================================
 # SESSION STATE INIT
 # ==============================================================
@@ -1575,6 +1755,7 @@ def init_session():
         "upvotes": set(),
         "active_user": "user_000",
         "playlist": [],
+        "onboarded": False,
     }
     for k, v in defaults.items():
         if k not in st.session_state:
@@ -1599,25 +1780,20 @@ def main():
     genres = get_genres(df)
 
     # ============================================================
-    # SIDEBAR — persistent navigation
+    # SIDEBAR — simplified 3-item nav
     # ============================================================
     with st.sidebar:
-        show_sidebar_nav(
-            playlist_count=len(st.session_state["playlist"]),
-            liked_count=len(st.session_state["upvotes"]),
-            hidden_count=len(st.session_state["downvotes"]),
-        )
+        show_sidebar_nav()
 
         page = st.radio(
             "Navigate",
-            ["🎧 Discover", "🎼 Playlist Builder", "🗺️ Explore", "👤 My Profile", "📊 Model Eval"],
+            ["🎧 Discover", "📚 My Library", "🗺️ Explore"],
             label_visibility="collapsed",
         )
 
     # ============================================================
-    # Shared state: seed song + filters (always computed)
+    # Shared state: default filter values
     # ============================================================
-    # default filter values for non-discover pages
     val_rng = (0.0, 1.0)
     eng_rng = (0.0, 1.0)
     has_year = df["year"].max() > 0
@@ -1625,47 +1801,88 @@ def main():
     ymax = int(df["year"].max()) if has_year else 2020
     year_rng = (ymin, ymax)
     min_pop = 0
-    n_results = 6
 
     # ============================================================
     # 🎧 DISCOVER
     # ============================================================
     if page == "🎧 Discover":
+
+        # ── FTUX: Welcome screen for first-time users ──
+        if not st.session_state["onboarded"]:
+            st.markdown("""
+<div class="welcome-screen">
+    <span class="welcome-icon">🎵</span>
+    <div class="welcome-title">Welcome to MY STYLE</div>
+    <div class="welcome-subtitle">
+        Tell us what you like, and we'll find music you'll love.
+    </div>
+    <span class="welcome-label">Pick a genre to get started</span>
+</div>
+            """, unsafe_allow_html=True)
+
+            # Genre selection grid
+            genre_icons = {
+                "Rock": "🎸", "Pop": "🎹", "Jazz": "🎷", "Electronic": "🎧",
+                "Hip Hop": "🎤", "Classical": "🎻", "R&B": "🎵", "Country": "🤠",
+                "Metal": "🔥", "Indie": "🌿", "Soul": "💜", "Blues": "🎺",
+            }
+
+            # Show top available genres as buttons
+            available = [g for g in genres if g in genre_icons][:8]
+            if not available:
+                available = genres[:8]
+
+            cols = st.columns(4)
+            selected_genre = None
+            for i, g in enumerate(available):
+                with cols[i % 4]:
+                    icon = genre_icons.get(g, "🎵")
+                    if st.button(f"{icon} {g}", key=f"welcome_{g}", use_container_width=True):
+                        selected_genre = g
+
+            # "Show me everything" button
+            st.markdown("")  # spacer
+            _, center_col, _ = st.columns([2, 3, 2])
+            with center_col:
+                if st.button("🔥 Show me everything", use_container_width=True):
+                    selected_genre = "All"
+
+            if selected_genre:
+                st.session_state["onboarded"] = True
+                if selected_genre != "All":
+                    st.session_state["disc_genre"] = selected_genre
+                st.rerun()
+
+            return  # stop here until genre is picked
+
+        # ── Normal Discover flow (onboarded users) ──
         gradient_section_header(
-            "Discover", "Find new music with ML-powered recommendations", "discover"
+            "Discover", "Your personalized recommendations", "discover"
         )
 
-        # ── Sidebar filters (only on Discover page) ──
+        # ── Sidebar filters ──
         with st.sidebar:
             st.markdown('<div class="sidebar-divider"></div>', unsafe_allow_html=True)
-            st.markdown(
-                '<div class="sidebar-section-label">Filters</div>',
-                unsafe_allow_html=True,
-            )
 
-            # genre + seed song picker
+            # Genre + song picker (always visible — Level 1)
             genre_filter = st.selectbox("🎵 Genre", ["All"] + genres, key="disc_genre")
             filtered_df = df if genre_filter == "All" else df[df["genre"] == genre_filter]
             options = [f"{r['title']} — {r['artist']}" for _, r in filtered_df.head(500).iterrows()]
-            picked = st.selectbox("Search", options, label_visibility="collapsed")
+            picked = st.selectbox("Search for a song", options, label_visibility="collapsed")
 
-            # mood sliders
-            st.markdown("**🌡 Mood**")
-            val_rng = st.slider("Sad ←→ Happy", 0.0, 1.0, (0.0, 1.0), 0.05)
-            eng_rng = st.slider("Chill ←→ Energetic", 0.0, 1.0, (0.0, 1.0), 0.05)
-
-            # year + popularity
-            year_rng = st.slider("📅 Year", ymin, ymax, (ymin, ymax), 1)
-            min_pop = st.slider("⭐ Min Popularity", 0, 100, 0, 5)
-            n_results = st.slider("Results per section", 4, 12, 6, 2)
-            st.divider()
+            # Advanced filters (collapsed — Level 2)
+            with st.expander("⚙ Refine Results", expanded=False):
+                val_rng = st.slider("😊 Mood: Sad ← → Happy", 0.0, 1.0, (0.0, 1.0), 0.05)
+                eng_rng = st.slider("⚡ Energy: Chill ← → Hype", 0.0, 1.0, (0.0, 1.0), 0.05)
+                year_rng = st.slider("📅 Year Range", ymin, ymax, (ymin, ymax), 1)
+                min_pop = st.slider("⭐ Min Popularity", 0, 100, 0, 5)
 
             if st.button("🔄 Reset Feedback"):
                 st.session_state["downvotes"] = set()
                 st.session_state["upvotes"] = set()
                 st.rerun()
 
-        # resolve seed
+        # Resolve seed song
         seed_row = filtered_df.iloc[options.index(picked) if picked in options else 0]
         seed_idx = df.index[df["track_id"] == seed_row["track_id"]].tolist()[0]
         seed = df.iloc[seed_idx]
@@ -1676,211 +1893,270 @@ def main():
         dv = st.session_state["downvotes"]
         uv = st.session_state["upvotes"]
 
-        # seed song display
-        st.markdown('<div class="sec-title">🎯 Seed Track <span>· selected</span></div>', unsafe_allow_html=True)
+        # ── Compact seed bar ──
         seed_genre = seed.get("genre", "Unknown")
         if seed_genre in ["Unknown", "[]", ""]:
             seed_genre = "—"
-        st.markdown(f"""
-        <div class="song-card">
-            <div class="song-title" style="font-size: 1.1rem;">🎵 {seed['title']}</div>
-            <div class="song-artist" style="font-size: .85rem;">
-                {seed['artist']} · {int(seed.get('year', 0)) or '—'}
-            </div>
-            <div class="tags">
-                <span class="tag tag-g">{seed_genre}</span>
-                <span class="tag tag-p">♩ {seed['tempo']:.0f} bpm</span>
-                <span class="tag tag-c">⚡ {seed['energy']:.2f}</span>
-                <span class="tag">💛 {seed['valence']:.2f}</span>
-                <span class="tag">🎸 {seed['acousticness']:.2f}</span>
-                <span class="tag">⭐ {int(seed.get('popularity', 50))}</span>
-            </div>
+        genre_colors = {
+            "Pop": "#1db954", "Rock": "#e8c547", "Hip-Hop": "#f472b6",
+            "Jazz": "#a78bfa", "Classical": "#5eead4", "Electronic": "#22d3ee",
+            "R&B": "#fb923c", "Country": "#34d399", "Metal": "#ef4444",
+        }
+        art_bg = genre_colors.get(seed_genre, "#333333")
+
+        seed_col, btn_col = st.columns([5, 1])
+        with seed_col:
+            st.markdown(f"""
+<div class="seed-bar">
+    <div class="seed-bar-left">
+        <div class="seed-bar-art" style="background: {art_bg};">🎵</div>
+        <div class="seed-bar-info">
+            <div class="seed-bar-title">{seed['title']}</div>
+            <div class="seed-bar-artist">{seed['artist']} · {seed_genre}</div>
         </div>
+    </div>
+    <div class="seed-bar-right">
+        <span class="seed-bar-match">{n_match:,} matches</span>
+    </div>
+</div>
+            """, unsafe_allow_html=True)
+        with btn_col:
+            st.markdown("<br>", unsafe_allow_html=True)
+            if st.button("➕ Playlist", use_container_width=True):
+                pl = st.session_state["playlist"]
+                if seed["track_id"] not in pl:
+                    pl.append(seed["track_id"])
+                    st.session_state["playlist"] = pl
+                    st.success(f'Added "{seed["title"]}"!')
+
+        # ── Unified recommendation feed ──
+        st.markdown(f"""
+<div class="feed-header">
+    <div class="feed-title">Recommended For You</div>
+    <div class="feed-subtitle">Based on "{seed['title']}" by {seed['artist']}</div>
+</div>
         """, unsafe_allow_html=True)
 
-        if st.button("➕ Add to Playlist"):
-            pl = st.session_state["playlist"]
-            if seed["track_id"] not in pl:
-                pl.append(seed["track_id"])
-                st.session_state["playlist"] = pl
-                st.success(f'Added "{seed["title"]}"!')
-
-        st.divider()
-
-        # ── CONTENT-BASED ──
-        st.markdown('<div class="sec-title">🎯 Because You Like This <span>· Content-Based</span></div>',
-                    unsafe_allow_html=True)
-        st.caption("Mean vector cosine similarity — finds songs closest to your seed's audio fingerprint.")
-
-        mv = mean_vector([seed_idx], X)
-        recs_cb = rec_content_based(mv, X, df, [seed_idx], n_results, active_mask, dv)
-
-        if recs_cb.empty:
-            st.warning(f"No results with current filters ({n_match:,} songs match).")
-        else:
-            with st.expander("🔥 Feature Comparison Heatmap"):
-                comparison_heatmap(seed, recs_cb)
-            cols = st.columns(2)
-            for i, (_, rec) in enumerate(recs_cb.iterrows()):
-                with cols[i % 2]:
-                    song_card(rec, why_this_song(seed, rec, "content"), f"cb_{i}", dv, uv, i)
-
-        st.divider()
-
-        # ── KNN ──
-        st.markdown('<div class="sec-title">🔍 Sonically Similar <span>· K-Nearest Neighbors</span></div>',
-                    unsafe_allow_html=True)
-        st.caption("KNN with cosine metric — finds the k geometrically closest songs in feature space.")
-
-        recs_knn = rec_knn(seed_idx, knn_model, X, df, n_results, active_mask, dv)
-
-        if recs_knn.empty:
-            st.warning("No KNN results with current filters.")
-        else:
-            cols2 = st.columns(2)
-            for i, (_, rec) in enumerate(recs_knn.iterrows()):
-                with cols2[i % 2]:
-                    song_card(rec, why_this_song(seed, rec, "knn"), f"knn_{i}", dv, uv, i)
-
-        st.divider()
-
-        # ── COLLABORATIVE ──
-        st.markdown('<div class="sec-title">👥 People Also Listen To <span>· Collaborative</span></div>',
-                    unsafe_allow_html=True)
-        st.caption("User-user cosine similarity — recommends what similar listeners enjoyed.")
-
-        rng3 = np.random.default_rng(int(hashlib.md5(seed["track_id"].encode()).hexdigest(), 16) % 2**32)
-        sample_user = rng3.choice(user_history.index.tolist())
-        u_vec = user_history.loc[sample_user].values.astype(float)
-        recs_cf = rec_collaborative(u_vec, user_history, df, n_results, dv)
-
-        if recs_cf.empty:
-            st.info("Not enough collaborative data for this seed.")
-        else:
-            cols3 = st.columns(2)
-            for i, (_, rec) in enumerate(recs_cf.iterrows()):
-                with cols3[i % 2]:
-                    song_card(rec, why_this_song(seed, rec, "collab"), f"cf_{i}", dv, uv, i)
-
-        st.divider()
-
-        # ── SURPRISE ──
-        st.markdown('<div class="sec-title">🎲 Surprise Me <span>· Discovery Mode</span></div>',
-                    unsafe_allow_html=True)
-        st.caption("Random anchor from your filtered pool — discover outside your comfort zone.")
-
-        if st.button("🎲 Reshuffle Surprises"):
-            st.rerun()
-
-        recs_surp = rec_surprise(df, X, active_mask, n_results, dv)
-        if recs_surp.empty:
-            st.warning("Not enough songs in the filtered pool.")
-        else:
-            cols4 = st.columns(2)
-            for i, (_, rec) in enumerate(recs_surp.iterrows()):
-                with cols4[i % 2]:
-                    song_card(rec, why_this_song(seed, rec, "surprise"), f"surp_{i}", dv, uv, i)
-
-        # bottom bar
-        show_bottom_bar(seed, n_match, len(st.session_state["downvotes"]))
-
-    # ============================================================
-    # 🎼 PLAYLIST BUILDER
-    # ============================================================
-    elif page == "🎼 Playlist Builder":
-        gradient_section_header(
-            "Playlist Builder", "Combine multiple songs for blended recommendations", "playlist"
+        all_recs = merge_recommendations(
+            seed_idx, X, df, knn_model, user_history,
+            n=8, mask=active_mask, skip=dv
         )
 
-        a, b = st.columns([3, 1])
-        with a:
-            pl_genre = st.selectbox("Genre filter", ["All"] + genres, key="pl_g")
-            pl_df = df if pl_genre == "All" else df[df["genre"] == pl_genre]
-            pl_opts = [f"{r['title']} — {r['artist']}" for _, r in pl_df.head(500).iterrows()]
-            pl_pick = st.selectbox("Find a song", pl_opts, key="pl_search", label_visibility="collapsed")
-        with b:
-            st.markdown("<br>", unsafe_allow_html=True)
-            if st.button("➕ Add"):
-                row = pl_df.iloc[pl_opts.index(pl_pick)]
-                pl = st.session_state["playlist"]
-                if row["track_id"] not in pl:
-                    pl.append(row["track_id"])
-                    st.session_state["playlist"] = pl
-
-        pl_ids = st.session_state["playlist"]
-        pl_tracks = df[df["track_id"].isin(pl_ids)]
-
-        if pl_tracks.empty:
-            st.info("Playlist is empty. Add at least one song to get recommendations.")
+        if all_recs.empty:
+            st.warning(f"No recommendations with current filters ({n_match:,} songs match). Try widening your filters.")
         else:
-            st.markdown(f"**{len(pl_tracks)} songs added:**")
-            for i, (_, t) in enumerate(pl_tracks.iterrows()):
-                rc1, rc2 = st.columns([8, 1])
-                with rc1:
-                    st.markdown(
-                        f'<span class="seed-tag">#{i+1} {t["title"][:25]} — {t["artist"][:20]}</span>',
-                        unsafe_allow_html=True,
-                    )
-                with rc2:
-                    if st.button("✕", key=f"rm_{t['track_id']}"):
-                        st.session_state["playlist"].remove(t["track_id"])
-                        st.rerun()
+            cols = st.columns(2)
+            for i, (_, rec) in enumerate(all_recs.iterrows()):
+                with cols[i % 2]:
+                    source = rec.get("source", "")
+                    song_card(rec, f"rec_{i}", dv, uv, source=source, seed=seed)
 
-            if st.button("🗑️ Clear All"):
-                st.session_state["playlist"] = []
-                st.rerun()
+        st.divider()
+
+        # ── Surprise Me (appends discovery results) ──
+        surp_col, _ = st.columns([1, 3])
+        with surp_col:
+            surprise_clicked = st.button("🎲 Surprise Me", use_container_width=True)
+
+        if surprise_clicked:
+            st.markdown("""
+<div class="feed-header">
+    <div class="feed-title">🎲 Surprise Picks</div>
+    <div class="feed-subtitle">Songs from outside your usual taste</div>
+</div>
+            """, unsafe_allow_html=True)
+
+            recs_surp = rec_surprise(df, X, active_mask, 6, dv)
+            if recs_surp.empty:
+                st.info("Not enough songs in the filtered pool for surprises.")
+            else:
+                if "source" not in recs_surp.columns:
+                    recs_surp["source"] = "Discovery"
+                cols_s = st.columns(2)
+                for i, (_, rec) in enumerate(recs_surp.iterrows()):
+                    with cols_s[i % 2]:
+                        song_card(rec, f"surp_{i}", dv, uv, source="Discovery", seed=seed)
+
+        # bottom bar
+        show_bottom_bar(seed, n_match)
+
+    # ============================================================
+    # 📚 MY LIBRARY (merged Playlist + Profile)
+    # ============================================================
+    elif page == "📚 My Library":
+        gradient_section_header(
+            "My Library", "Your playlist and listening profile", "playlist"
+        )
+
+        lib_tab1, lib_tab2 = st.tabs(["🎼 Playlist Builder", "👤 My Profile"])
+
+        # ── Playlist Builder tab ──
+        with lib_tab1:
+            a, b = st.columns([3, 1])
+            with a:
+                pl_genre = st.selectbox("Genre filter", ["All"] + genres, key="pl_g")
+                pl_df = df if pl_genre == "All" else df[df["genre"] == pl_genre]
+                pl_opts = [f"{r['title']} — {r['artist']}" for _, r in pl_df.head(500).iterrows()]
+                pl_pick = st.selectbox("Find a song", pl_opts, key="pl_search", label_visibility="collapsed")
+            with b:
+                st.markdown("<br>", unsafe_allow_html=True)
+                if st.button("➕ Add"):
+                    row = pl_df.iloc[pl_opts.index(pl_pick)]
+                    pl = st.session_state["playlist"]
+                    if row["track_id"] not in pl:
+                        pl.append(row["track_id"])
+                        st.session_state["playlist"] = pl
+
+            pl_ids = st.session_state["playlist"]
+            pl_tracks = df[df["track_id"].isin(pl_ids)]
+
+            if pl_tracks.empty:
+                # Helpful empty state
+                st.markdown("""
+<div class="welcome-screen" style="padding: 2rem 1rem;">
+    <span class="welcome-icon">🎼</span>
+    <div class="welcome-title" style="font-size: 1.5rem;">Your Playlist is Empty</div>
+    <div class="welcome-subtitle" style="font-size: 0.88rem;">
+        Add 2-3 songs you love, and we'll find<br>the perfect mix to match.
+    </div>
+    <span class="welcome-label">💡 Tip: Mix genres for surprising recommendations!</span>
+</div>
+                """, unsafe_allow_html=True)
+            else:
+                st.markdown(f"**{len(pl_tracks)} songs added:**")
+                for i, (_, t) in enumerate(pl_tracks.iterrows()):
+                    rc1, rc2 = st.columns([8, 1])
+                    with rc1:
+                        st.markdown(
+                            f'<span class="seed-tag">#{i+1} {t["title"][:25]} — {t["artist"][:20]}</span>',
+                            unsafe_allow_html=True,
+                        )
+                    with rc2:
+                        if st.button("✕", key=f"rm_{t['track_id']}"):
+                            st.session_state["playlist"].remove(t["track_id"])
+                            st.rerun()
+
+                if st.button("🗑️ Clear All"):
+                    st.session_state["playlist"] = []
+                    st.rerun()
+
+                st.divider()
+
+                pl_indices = [df.index[df["track_id"] == tid].tolist()[0]
+                              for tid in pl_ids if tid in df["track_id"].values]
+
+                if pl_indices:
+                    st.markdown("#### Combined Audio Profile")
+                    avg_feats = df.iloc[pl_indices][
+                        ["valence","energy","acousticness","danceability","instrumentalness","liveness"]
+                    ].mean()
+                    radar_chart(avg_feats, "Averaged profile of your playlist")
+
+                    st.markdown("#### ✨ Songs That Match Your Playlist Vibe")
+                    n_pl = st.slider("How many results?", 4, 16, 8, 2, key="pl_n")
+
+                    pl_mv = mean_vector(pl_indices, X)
+                    pl_recs = rec_content_based(pl_mv, X, df, pl_indices, n_pl,
+                                                 skip=st.session_state["downvotes"])
+
+                    if pl_recs.empty:
+                        st.info("No recommendations. Try adding more songs.")
+                    else:
+                        pl_cols = st.columns(2)
+                        for i, (_, rec) in enumerate(pl_recs.iterrows()):
+                            with pl_cols[i % 2]:
+                                song_card(rec, f"pl_{i}",
+                                          st.session_state["downvotes"],
+                                          st.session_state["upvotes"],
+                                          source="Similar Sound",
+                                          seed=avg_feats)
+
+        # ── Profile tab ──
+        with lib_tab2:
+            user_ids = user_history.index.tolist()
+            active_user = st.selectbox(
+                "Switch user profile",
+                user_ids,
+                index=user_ids.index(st.session_state["active_user"])
+                if st.session_state["active_user"] in user_ids else 0,
+            )
+            st.session_state["active_user"] = active_user
+            u_vec = user_history.loc[active_user].values.astype(float)
+
+            p1, p2 = st.columns([2, 3])
+            with p1:
+                st.markdown("#### Genre Mix")
+                genre_donut(df, u_vec)
+            with p2:
+                st.markdown("#### Average Audio Taste")
+                w_df = df.copy()
+                w_df["plays"] = u_vec
+                total_p = w_df["plays"].sum() or 1
+                avg_f = {
+                    feat: (w_df[feat] * w_df["plays"]).sum() / total_p
+                    for feat in ["valence","energy","acousticness","danceability","instrumentalness","liveness","speechiness"]
+                }
+                fig_bar = px.bar(
+                    x=list(avg_f.keys()), y=list(avg_f.values()),
+                    color=list(avg_f.values()),
+                    color_continuous_scale=[[0,"#a78bfa"],[0.5,"#5eead4"],[1,"#1db954"]]
+                )
+                fig_bar.update_layout(
+                    paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+                    font_color="#ffffff", height=260, coloraxis_showscale=False,
+                    xaxis=dict(gridcolor="#282828"), yaxis=dict(gridcolor="#282828", range=[0, 1]),
+                    margin=dict(t=10, b=10)
+                )
+                st.plotly_chart(fig_bar, use_container_width=True)
+
+            st.markdown("#### 🔥 Most Played")
+            top_idx = np.argsort(u_vec)[::-1][:8]
+            top_tracks = df.iloc[top_idx].copy()
+            top_tracks["plays"] = u_vec[top_idx]
+
+            for i, (_, t) in enumerate(top_tracks.iterrows()):
+                color = "#1db954" if i < 3 else "#727272"
+                st.markdown(
+                    f'<div class="song-card" style="padding: .7rem 1.1rem;">'
+                    f'<div style="display: flex; align-items: center; gap: 1rem;">'
+                    f'<span style="font-family: Space Grotesk, sans-serif; font-size: 1.4rem; '
+                    f'font-weight: 700; color: {color}; min-width: 2.2rem;">#{i+1}</span>'
+                    f'<div><div class="song-title" style="font-size: .88rem;">{t["title"]}</div>'
+                    f'<div class="song-artist">{t["artist"]} · {int(t["plays"])} plays</div>'
+                    f'</div></div></div>',
+                    unsafe_allow_html=True,
+                )
 
             st.divider()
 
-            pl_indices = [df.index[df["track_id"] == tid].tolist()[0]
-                          for tid in pl_ids if tid in df["track_id"].values]
+            # Session stats + Reset
+            fc1, fc2 = st.columns(2)
+            fc1.metric("♡ Liked this session", len(st.session_state["upvotes"]))
+            fc2.metric("✕ Hidden this session", len(st.session_state["downvotes"]))
 
-            if pl_indices:
-                st.markdown("#### Combined Audio Profile")
-                avg_feats = df.iloc[pl_indices][
-                    ["valence","energy","acousticness","danceability","instrumentalness","liveness"]
-                ].mean()
-                radar_chart(avg_feats, "Averaged profile of your playlist")
-
-                st.markdown("#### ✨ Songs That Match Your Playlist Vibe")
-                n_pl = st.slider("How many results?", 4, 16, 8, 2, key="pl_n")
-
-                pl_mv = mean_vector(pl_indices, X)
-                pl_recs = rec_content_based(pl_mv, X, df, pl_indices, n_pl,
-                                             skip=st.session_state["downvotes"])
-
-                if pl_recs.empty:
-                    st.info("No recommendations. Try adding more songs.")
-                else:
-                    with st.expander("🔥 Feature Comparison Heatmap"):
-                        comparison_heatmap(df.iloc[pl_indices[0]], pl_recs)
-
-                    pl_cols = st.columns(2)
-                    avg_seed = df.iloc[pl_indices].mean(numeric_only=True)
-                    for i, (_, rec) in enumerate(pl_recs.iterrows()):
-                        with pl_cols[i % 2]:
-                            song_card(rec, why_this_song(avg_seed, rec, "content"),
-                                      f"pl_{i}", st.session_state["downvotes"],
-                                      st.session_state["upvotes"], i)
+            if st.button("🔄 Reset All Feedback"):
+                st.session_state["downvotes"] = set()
+                st.session_state["upvotes"] = set()
+                st.rerun()
 
     # ============================================================
-    # 🗺️ EXPLORE
+    # 🗺️ Explore (now includes Model Eval)
     # ============================================================
     elif page == "🗺️ Explore":
         gradient_section_header(
             "Explore", "Visualize the musical landscape", "explore"
         )
 
-        e1, e2, e3 = st.tabs(["🌍 Song Map", "📈 Year Trends", "🎸 Genre & Artist Stats"])
+        e1, e2, e3 = st.tabs(["🗺️ Song Map", "📈 Year Trends", "🎸 Genre & Artist Stats"])
 
         with e1:
             st.markdown("#### Song Similarity Map (PCA)")
-            st.caption("Each dot is a song. Position = audio similarity. Songs that cluster together sound similar.")
+            st.caption("Each dot is a song. Songs that cluster together sound similar.")
             taste_map(df, pca_coords, [0])
 
         with e2:
             st.markdown("#### Audio Feature Trends Over Time")
-            st.caption("Real data from data_by_year.csv — shows how music changed from the 1920s to today.")
+            st.caption("How music changed from the 1920s to today.")
             year_trends_chart()
 
         with e3:
@@ -1894,87 +2170,16 @@ def main():
                 st.caption("Bubble size = popularity, color = danceability.")
                 artist_stats_chart()
 
-    # ============================================================
-    # 👤 MY PROFILE
-    # ============================================================
-    elif page == "👤 My Profile":
-        gradient_section_header(
-            "My Profile", "Your listening taste analysis", "profile"
-        )
-
-        user_ids = user_history.index.tolist()
-        active_user = st.selectbox(
-            "Switch user profile",
-            user_ids,
-            index=user_ids.index(st.session_state["active_user"])
-            if st.session_state["active_user"] in user_ids else 0,
-        )
-        st.session_state["active_user"] = active_user
-        u_vec = user_history.loc[active_user].values.astype(float)
-
-        p1, p2 = st.columns([2, 3])
-        with p1:
-            st.markdown("#### Genre Mix")
-            genre_donut(df, u_vec)
-        with p2:
-            st.markdown("#### Average Audio Taste")
-            w_df = df.copy()
-            w_df["plays"] = u_vec
-            total_p = w_df["plays"].sum() or 1
-            avg_f = {
-                feat: (w_df[feat] * w_df["plays"]).sum() / total_p
-                for feat in ["valence","energy","acousticness","danceability","instrumentalness","liveness","speechiness"]
-            }
-            fig_bar = px.bar(
-                x=list(avg_f.keys()), y=list(avg_f.values()),
-                color=list(avg_f.values()),
-                color_continuous_scale=[[0,"#a78bfa"],[0.5,"#5eead4"],[1,"#1db954"]]
-            )
-            fig_bar.update_layout(
-                paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-                font_color="#ffffff", height=260, coloraxis_showscale=False,
-                xaxis=dict(gridcolor="#282828"), yaxis=dict(gridcolor="#282828", range=[0, 1]),
-                margin=dict(t=10, b=10)
-            )
-            st.plotly_chart(fig_bar, use_container_width=True)
-
-        st.markdown("#### 🔥 Most Played")
-        top_idx = np.argsort(u_vec)[::-1][:8]
-        top_tracks = df.iloc[top_idx].copy()
-        top_tracks["plays"] = u_vec[top_idx]
-
-        for i, (_, t) in enumerate(top_tracks.iterrows()):
-            color = "#1db954" if i < 3 else "#727272"
-            st.markdown(
-                f'<div class="song-card" style="padding: .7rem 1.1rem;">'
-                f'<div style="display: flex; align-items: center; gap: 1rem;">'
-                f'<span style="font-family: Space Grotesk, sans-serif; font-size: 1.4rem; '
-                f'font-weight: 700; color: {color}; min-width: 2.2rem;">#{i+1}</span>'
-                f'<div><div class="song-title" style="font-size: .88rem;">{t["title"]}</div>'
-                f'<div class="song-artist">{t["artist"]} · {int(t["plays"])} plays</div>'
-                f'</div></div></div>',
-                unsafe_allow_html=True,
-            )
-
+        # Model Eval — hidden behind expander for developers
         st.divider()
-        fc1, fc2 = st.columns(2)
-        fc1.metric("👍 Liked this session", len(st.session_state["upvotes"]))
-        fc2.metric("👎 Hidden this session", len(st.session_state["downvotes"]))
-
-    # ============================================================
-    # 📊 MODEL EVAL
-    # ============================================================
-    elif page == "📊 Model Eval":
-        gradient_section_header(
-            "Model Evaluation", "Performance metrics and dataset analysis", "eval"
-        )
-        eval_dashboard(df)
+        with st.expander("📊 Model Evaluation — Developer Metrics", expanded=False):
+            eval_dashboard(df)
 
     # ── Footer ──
     st.markdown(
         '<div style="text-align:center; padding: 2rem 0 .5rem; color: #727272; font-size: .7rem;">'
         'MY STYLE · Dataset: vatsalmavani/spotify-dataset (Kaggle) · '
-        'Built with scikit-learn, streamlit, plotly · Clark (2021)'
+        'Built with scikit-learn, streamlit, plotly'
         '</div>',
         unsafe_allow_html=True,
     )
