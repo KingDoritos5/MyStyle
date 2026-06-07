@@ -927,7 +927,7 @@ def mean_vector(seed_indices, X):
     return np.mean(vecs, axis=0).reshape(1, -1)
 
 
-def build_filter_mask(df, valence_rng, energy_rng, year_rng, min_pop):
+def build_filter_mask(df, valence_rng, energy_rng, year_rng, min_pop, genre=None):
     mask = (
         (df["valence"] >= valence_rng[0]) & (df["valence"] <= valence_rng[1]) &
         (df["energy"] >= energy_rng[0]) & (df["energy"] <= energy_rng[1]) &
@@ -935,6 +935,8 @@ def build_filter_mask(df, valence_rng, energy_rng, year_rng, min_pop):
     )
     if df["year"].max() > 0:
         mask = mask & (df["year"] >= year_rng[0]) & (df["year"] <= year_rng[1])
+    if genre and genre != "All":
+        mask = mask & (df["genre"] == genre)
     return mask.values
 
 
@@ -1641,32 +1643,20 @@ def main():
                 unsafe_allow_html=True,
             )
 
-            # seed song picker
-            st.markdown("**🎵 Pick a Song**")
-            genre_filter = st.selectbox("Filter by genre", ["All"] + genres, key="disc_genre")
+            # genre + seed song picker
+            genre_filter = st.selectbox("🎵 Genre", ["All"] + genres, key="disc_genre")
             filtered_df = df if genre_filter == "All" else df[df["genre"] == genre_filter]
             options = [f"{r['title']} — {r['artist']}" for _, r in filtered_df.head(500).iterrows()]
             picked = st.selectbox("Search", options, label_visibility="collapsed")
-            st.divider()
 
             # mood sliders
             st.markdown("**🌡 Mood**")
-            st.caption("Sad ←→ Happy")
-            val_rng = st.slider("valence", 0.0, 1.0, (0.0, 1.0), 0.05, label_visibility="collapsed")
-            st.caption("Chill ←→ Energetic")
-            eng_rng = st.slider("energy", 0.0, 1.0, (0.0, 1.0), 0.05, label_visibility="collapsed")
-            st.divider()
+            val_rng = st.slider("Sad ←→ Happy", 0.0, 1.0, (0.0, 1.0), 0.05)
+            eng_rng = st.slider("Chill ←→ Energetic", 0.0, 1.0, (0.0, 1.0), 0.05)
 
-            # year filter
-            st.markdown("**📅 Year**")
-            year_rng = st.slider("year", ymin, ymax, (ymin, ymax), 1, label_visibility="collapsed")
-            st.divider()
-
-            # popularity filter
-            st.markdown("**⭐ Popularity**")
-            min_pop = st.slider("pop", 0, 100, 0, 5, label_visibility="collapsed")
-            st.divider()
-
+            # year + popularity
+            year_rng = st.slider("📅 Year", ymin, ymax, (ymin, ymax), 1)
+            min_pop = st.slider("⭐ Min Popularity", 0, 100, 0, 5)
             n_results = st.slider("Results per section", 4, 12, 6, 2)
             st.divider()
 
@@ -1680,46 +1670,40 @@ def main():
         seed_idx = df.index[df["track_id"] == seed_row["track_id"]].tolist()[0]
         seed = df.iloc[seed_idx]
 
-        active_mask = build_filter_mask(df, val_rng, eng_rng, year_rng, min_pop)
+        active_mask = build_filter_mask(df, val_rng, eng_rng, year_rng, min_pop, genre_filter)
         n_match = int(active_mask.sum())
 
         dv = st.session_state["downvotes"]
         uv = st.session_state["upvotes"]
 
-        # seed song display + radar
-        c1, c2 = st.columns([3, 2])
-        with c1:
-            st.markdown('<div class="sec-title">🎯 Seed Track <span>· selected</span></div>', unsafe_allow_html=True)
-            seed_genre = seed.get("genre", "Unknown")
-            if seed_genre in ["Unknown", "[]", ""]:
-                seed_genre = "—"
-            st.markdown(f"""
-            <div class="song-card">
-                <div class="song-title" style="font-size: 1.1rem;">🎵 {seed['title']}</div>
-                <div class="song-artist" style="font-size: .85rem;">
-                    {seed['artist']} · {int(seed.get('year', 0)) or '—'}
-                </div>
-                <div class="tags">
-                    <span class="tag tag-g">{seed_genre}</span>
-                    <span class="tag tag-p">♩ {seed['tempo']:.0f} bpm</span>
-                    <span class="tag tag-c">⚡ {seed['energy']:.2f}</span>
-                    <span class="tag">💛 {seed['valence']:.2f}</span>
-                    <span class="tag">🎸 {seed['acousticness']:.2f}</span>
-                    <span class="tag">⭐ {int(seed.get('popularity', 50))}</span>
-                </div>
+        # seed song display
+        st.markdown('<div class="sec-title">🎯 Seed Track <span>· selected</span></div>', unsafe_allow_html=True)
+        seed_genre = seed.get("genre", "Unknown")
+        if seed_genre in ["Unknown", "[]", ""]:
+            seed_genre = "—"
+        st.markdown(f"""
+        <div class="song-card">
+            <div class="song-title" style="font-size: 1.1rem;">🎵 {seed['title']}</div>
+            <div class="song-artist" style="font-size: .85rem;">
+                {seed['artist']} · {int(seed.get('year', 0)) or '—'}
             </div>
-            """, unsafe_allow_html=True)
+            <div class="tags">
+                <span class="tag tag-g">{seed_genre}</span>
+                <span class="tag tag-p">♩ {seed['tempo']:.0f} bpm</span>
+                <span class="tag tag-c">⚡ {seed['energy']:.2f}</span>
+                <span class="tag">💛 {seed['valence']:.2f}</span>
+                <span class="tag">🎸 {seed['acousticness']:.2f}</span>
+                <span class="tag">⭐ {int(seed.get('popularity', 50))}</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
-            if st.button("➕ Add to Playlist"):
-                pl = st.session_state["playlist"]
-                if seed["track_id"] not in pl:
-                    pl.append(seed["track_id"])
-                    st.session_state["playlist"] = pl
-                    st.success(f'Added "{seed["title"]}"!')
-
-        with c2:
-            st.markdown('<div class="sec-title">🔬 Audio DNA <span>· fingerprint</span></div>', unsafe_allow_html=True)
-            radar_chart(seed, f"DNA: {seed['title'][:22]}")
+        if st.button("➕ Add to Playlist"):
+            pl = st.session_state["playlist"]
+            if seed["track_id"] not in pl:
+                pl.append(seed["track_id"])
+                st.session_state["playlist"] = pl
+                st.success(f'Added "{seed["title"]}"!')
 
         st.divider()
 
