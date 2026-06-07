@@ -3,3 +3,9 @@ startCommand = "streamlit run app.py --server.port=8080 --server.address=0.0.0.0
 healthcheckPath = "/"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
+[theme]
+base = "dark"
+primaryColor = "#1db954"
+backgroundColor = "#121212"
+secondaryBackgroundColor = "#181818"
+textColor = "#ffffff"
