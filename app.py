@@ -1,16 +1,14 @@
 # MY STYLE - music recommendation app
-# final project for machine learning class
+# final project for machine learning 
 # using the vatsalmavani spotify dataset from kaggle
-#
 # datasets used:
 #   data.csv          - main track info (170k songs)
 #   data_by_genres.csv - genre-level audio averages
 #   data_by_year.csv   - yearly audio feature trends
 #   data_by_artist.csv - artist-level stats
 #   data_w_genres.csv  - tracks with genre tags
-#
 # algorithms: content-based (mean vector), KNN, collaborative filtering
-# all three run automatically, no need to pick one
+# all three run automatically
 
 import hashlib
 import os
@@ -34,7 +32,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# spent way too long on this css ngl
+# spent way too long on this
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap');
@@ -940,13 +938,11 @@ def human_label(feature, value):
     return ""
 
 
-# ==============================================================
 # LOADING THE DATASETS
-# ==============================================================
 
 @st.cache_data(show_spinner=False)
 def load_main_tracks(max_rows=15000):
-    # main song database - 170k tracks but we sample it down for speed
+    # main song database - 170k tracks but we sample it down for faster speed
     if os.path.exists("data.csv.gz"):
         df = pd.read_csv("data.csv.gz")
     elif os.path.exists("data.csv"):
@@ -955,7 +951,7 @@ def load_main_tracks(max_rows=15000):
         st.error("⚠️ **Dataset file not found!** Please make sure `data.csv.gz` (or `data.csv`) is uploaded to the root of your repository on GitHub.")
         st.stop()
 
-    # rename to match our internal column names
+    # rename our internal column names
     df.rename(columns={"name": "title", "id": "track_id", "artists": "artist"}, inplace=True)
 
     # clean up the artist column - it comes as "['Artist Name']" from the csv
